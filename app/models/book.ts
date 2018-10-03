@@ -28,7 +28,6 @@ const bookSchema = new Schema({
     },
     numberOfPages: {
         type: Number,
-        "default": Date.now
     },
     rating: {
         type: Rating
