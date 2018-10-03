@@ -1,4 +1,8 @@
 //POST
+//Register user (authentication)
+curl -X POST http://localhost:3000/register -d @sampleUser.json --header "Content-Type: application/json"
+
+//POST
 //Posting book with sample json data from file located inside actual folder.
 curl -X POST http://localhost:3000/book -d @sampleBook.json --header "Content-Type: application/json"
 

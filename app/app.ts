@@ -2,6 +2,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import {Routes} from "./routes/routes";
 import {MongoServer} from "./mongoConfig";
+import * as session from 'express-session'
 
 class App {
 
@@ -18,6 +19,7 @@ class App {
     private config(): void {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: true}));
+        this.app.use(session({secret: "Books secret key"}));
     }
 }
 
