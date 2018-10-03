@@ -19,7 +19,7 @@ export class BookController {
     public getBookWithID(req: Request, res: Response) {
         let bookId = req.params.bookId;
         Book.findById(bookId, (err, book) => {
-                if (!err && !book) {
+            if (!err && !book) {
                     res.status(404).json(`No book with id: ${bookId}`);
                 } else {
                     err ? res.status(500).send(err.message) : res.status(200).json(book)
@@ -50,10 +50,6 @@ export class BookController {
                     res.status(200).json({message: 'Successfully deleted Book!'})
             }
         });
-    }
-
-    private wrapInExistenceCheck() {
-
     }
 
 }
