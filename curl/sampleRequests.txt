@@ -1,0 +1,30 @@
+//POST
+//Posting book with sample data located in 'data' folder as json.
+curl POST http://localhost:3000/book -d @/data/sampleBook.json --header "Content-Type: application/json"
+
+//GET
+//Getting all books persisted in the in-memory database.
+curl -X GET http://localhost:3000/book
+
+//GET
+//Get single book by it's id.
+//Please send post request before and catch id from response. After that put id in the url instead of '<BOOK_ID>'.
+curl -X GET http://localhost:3000/book/<BOOK_ID>
+
+/DELETE
+//Delete single book by it's id.
+//Please send post request before and catch id from response. After that put id in the url instead of '<BOOK_ID>'.
+curl -X DELETE http://localhost:3000/book/<BOOK_ID>
+
+//PUT
+//Updating book by it's id.
+//Please send post request before and catch id from response. After that put id in the url instead of '<BOOK_ID>'.
+curl POST http://localhost:3000/book/<BOOK_ID> -d @/data/sampleBook.json --header "Content-Type: application/json"
+
+
+// ---------- VALIDATION ----------
+//POST
+//Posting book with sample data located in 'data' folder as json.
+//The data contains wrong ISBN.
+curl POST http://localhost:3000/book -d @/data/sampleBookWithWrongISBN.json --header "Content-Type: application/json"
+
