@@ -11,7 +11,7 @@ export class MongoServer {
                 autoReconnect: true,
                 reconnectTries: Number.MAX_VALUE,
                 reconnectInterval: 1000,
-                useNewUrlParser: true
+                useNewUrlParser: true,
             };
 
             mongoose.connect(mongoUri, mongooseOptions);

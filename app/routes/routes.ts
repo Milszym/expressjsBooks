@@ -1,5 +1,6 @@
 import {BookController} from "../controllers/bookController";
 import {HomeController} from "../controllers/homeController";
+import {ApiEndpoints} from "../constants/apiEndpoints";
 
 export class Routes {
 
@@ -7,14 +8,14 @@ export class Routes {
     public homeController: HomeController= new HomeController();
 
     public routes(app): void {
-        app.route('/')
+        app.route(ApiEndpoints.HOME_URL)
             .get(this.homeController.showWelcomeMessage);
 
-        app.route('/book')
+        app.route(ApiEndpoints.BOOK_URL)
             .get(this.bookController.getBooks)
             .post(this.bookController.addNewBook);
 
-        app.route('/book/:bookId')
+        app.route(ApiEndpoints.BOOK_URL_WITH_ID)
             .get(this.bookController.getBookWithID)
             .put(this.bookController.updateBook)
             .delete(this.bookController.deleteBook);
