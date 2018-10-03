@@ -1,5 +1,6 @@
 import app from '.././app';
 import * as chai from 'chai';
+import {HomeController} from "../controllers/homeController";
 import chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
@@ -9,7 +10,7 @@ describe('Hello API Request', () => {
         return chai.request(app).get('/')
             .then(res => {
                 chai.expect(res).to.have.status(200);
-                chai.expect(res.body.message).to.eql('Welcome to the greatest library you\'ve ever seen!!!');
+                chai.expect(res.body.message).to.eql(HomeController.WELCOME_MESSAGE);
             })
     })
 });
