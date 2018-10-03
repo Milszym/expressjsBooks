@@ -1,13 +1,18 @@
 ## Run
-To run the app, please use command: 
+Before running the app, please install modules via command:
 
+    npm install
+    
+    
+To run the app, please use command: 
+    
     npm run dev
 
 in root directory.
 
-To run tests please use command: 
+To run tests, please use command: 
                                
-       npm run dev
+    npm run test
                                
 in root directory.
 
