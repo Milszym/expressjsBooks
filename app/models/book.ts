@@ -23,7 +23,7 @@ const bookSchema = new Schema({
                     .test(value);
             },
             message: props => `${props.value} is not a valid ISBN number! We support only ISBN13 format. 
-                Correct sample is: ISBN13: 123-1-1234-1234-1.`
+                Correct sample is: ISBN-13: 978-1-56619-909-3.`
         },
     },
     numberOfPages: {
